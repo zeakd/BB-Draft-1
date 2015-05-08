@@ -171,14 +171,14 @@ nav a:hover {
 }
 div[id^= 'item1-']{
     margin : 20px 0;
-    height : 300px;
+    height : 200px;
     background-color: darkorange;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 #item0{
-    padding-top: 120px;
+    padding-top: 100px;
     background-color: white;
 }
 #item1{
@@ -225,6 +225,7 @@ div[id^= 'item1-']{
     margin-bottom: 20px;
 */
 }
+/*
 #bulletin-item-subscribe {
     width : 65%;
 }
@@ -234,6 +235,7 @@ div[id^= 'item1-']{
 #bulletin-item-blackout {
     width : 35%;
 }
+*/
 .bulletin-item > img{
     width :100%;
 }
@@ -312,6 +314,7 @@ div[id^= 'item1-']{
     #item0{
         padding-top: 40px;
     }
+    
 }
 
 @media only screen and (min-width: 768px) and (max-width : 1024px) {
