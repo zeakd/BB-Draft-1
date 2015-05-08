@@ -58,6 +58,7 @@ textarea {
 
 body {
     font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    background-color: #BCB5AD;
 }
 
 .wrapper {
@@ -126,29 +127,62 @@ nav a:hover {
    ============== */
 
 .main {
-    
+    position : relative;
 }
-.grid-container {
-       
+.main-grid-bg, 
+.main-grid{
+    min-height : 500px;
+    width : 100%;
 }
 .main-grid {
-    height : 500px;
-    background-color: gray;
+    position : relative;
+
+/*
+    background-image: url(../img/first_02_txt.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;   
+*/
+}
+.main-grid > img{
+    position: absolute;
+    max-width : 50%;
+    margin: auto;
+    top: 0%; right : 0; bottom: 0; left :0;
+}
+.main-grid-bg {
+    z-index: -10;
+    position: fixed;
     background-image: url(../img/first_02.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;   
+}
+
+
+
+.support-grid {
+    position: relative;
+    max-width : none;
+    padding : 0;
+    margin : 0;
+}
+[id^='item']{
+}
+div[id^= 'item1-']{
+    margin : 20px 0;
+    height : 300px;
+    background-color: darkorange;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-.support-grid {
-    padding : 0;
-    margin : 0;
-    
+#item0{
+    padding-top: 120px;
+    background-color: white;
 }
-div[id^= 'item1-']{
-    height : 200px;
-    background-color: darkorange;
-    background-size: cover;
-    background-repeat: no-repeat;
+#item1{
+    background-color: white;
 }
 #item1-1{
     background-image: url(../img/first_05.jpg);
@@ -160,10 +194,48 @@ div[id^= 'item1-']{
     background-image: url(../img/first_09.jpg);
 }
 #item2 {
-    background-color: gray;
+    overflow: hidden;
+    padding: 0;
 }
 #item2 img{
     width : 100%;
+}
+#item3 {
+    background-color: white;   
+}
+#bulletin {
+    margin-top : 20px;
+    width : 100%;
+}
+.grid-sizer {
+    width : 5%;   
+}
+.bulletin-item {
+    display: block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding : 10px;
+/*
+    margin-right : 2.5%;
+    margin-bottom: 2.5%;
+*/
+/*
+    margin-right : 20px;
+    margin-bottom: 20px;
+*/
+}
+#bulletin-item-subscribe {
+    width : 65%;
+}
+#bulletin-item-event {
+    width : 65%;
+}
+#bulletin-item-blackout {
+    width : 35%;
+}
+.bulletin-item > img{
+    width :100%;
 }
 /* ===============
     ALL: IE Fixes
@@ -195,7 +267,7 @@ div[id^= 'item1-']{
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 480px) {
+@media only screen and (max-width : 767px){
 
 /* ====================
     INTERMEDIATE: Menu
@@ -230,9 +302,19 @@ div[id^= 'item1-']{
     .oldie nav a {
         margin: 0 0.7%;
     }
+    
+    
+    
+    .main-grid-bg, 
+    .main-grid{
+        min-height : 300px;
+    }
+    #item0{
+        padding-top: 40px;
+    }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width : 1024px) {
 
 /* ====================
     WIDE: CSS3 Effects
@@ -261,6 +343,9 @@ div[id^= 'item1-']{
 /* ============
     WIDE: Main
    ============ */
+    #item0{
+        padding-top: 80px;
+    }
 }
 
 @media only screen and (min-width: 1140px) {

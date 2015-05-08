@@ -10,9 +10,10 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
+        
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/unsemantic-grid-responsive-tablet.css">
+        <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/font.css">
         <link rel="stylesheet" href="css/main.css">
 
@@ -76,21 +77,68 @@
             </header>
         </div>
 -->
-
+<!--
+        <header id = 'desktop-header' class = 'header'>
+            <div class = 'logo'>
+                <a href = "/beanbrothers"></a>
+            </div>
+            <nav class = 'wrapper'>
+                <ul id = 'left-nav'>
+                    <li class = 'major-menu menu'><a href = "/beanbrothers/cafe">OUR CAFE</a></li>
+                    <li class = 'major-menu menu'><a>SUBSCRIBE</a></li>
+                    <li class = 'major-menu menu'><a>GOODS</a></li>
+                    <li class = 'major-menu menu'><a href = "/beanbrothers/guide">GUIDE</a></li>
+                    <li class = 'major-menu menu'><a>EVENT</a></li>                   
+                </ul>
+                <ul id = 'right-nav'>
+                    <li class = 'minor-menu menu'><a>LOGIN</a></li>
+                    <li class = 'minor-menu menu'><a>CART</a></li>
+                </ul>
+            </nav>
+        </header>
+-->
         <div class="main-container">
             <div class="main wrapper clearfix">
-                <div class = 'main-grid'>
-                    <img src = "img/first_02_txt.png">
+                <div class = 'main-grid-bg'>
+                    
                 </div>
-                <div class = 'support-grid grid-container grid-80 push-10'>
-                    <div class = 'grid-33 item-1-1' id = 'item1-1'></div>
-                    <div class = 'grid-33 item-1-2' id = 'item1-2'></div>
-                    <div class = 'grid-33 item-1-3' id = 'item1-3'></div>
-                    <div class = 'grid-100' id = 'item2'>
-                        <img src = "img/first_15_2.png">
+                <div class = 'main-grid grid-100'>
+                    <img class = 'wow fadeIn' src = 'img/first_02_txt_s.png' data-0 = "top : 10%;opacity:1;" data-500 = "top : -200%;opacity:0;">
+                </div>
+                <div class = 'support-grid grid-container'>
+                    <div class = 'support-space' id = 'item0'></div>
+                    <div class = 'grid-100 grid-parent' id = 'item1'>
+                        <div class = 'grid-80 push-10 grid-parent'>
+                            <div class = 'grid-33'>
+                                <div id = 'item1-1' class = 'wow fadeInUp' data-wow-duration = "0.5s" data-wow-delay = "0.1s">
+
+                                </div>
+                            </div>
+                            <div class = 'grid-33'>
+                                <div id = 'item1-2' class = 'wow fadeInUp' data-wow-duration = "0.5s">
+
+                                </div>
+                            </div>
+                            <div class = 'grid-33'>
+                                <div id = 'item1-3' class = 'wow fadeInUp' data-wow-duration = "0.5s" data-wow-delay = "0.2s">
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
-                    
+                    <div class = 'grid-100' id = 'item2'>
+                        <img src = "img/beanbrothers_100.png">
+                    </div>
+                    <div class = 'grid-100 grid-parent' id = 'item3'>
+                        <div class = "grid-80 push-10 grid-parent">
+                            <div id = 'bulletin'>
+                                <div class="grid-sizer"></div>
+                                <a class = 'bulletin-item' id = 'bulletin-item-subscribe' data-wow-delay = "0.1s"><img src = 'img/first_18.jpg' class = 'masonry-bulletin-item wow fadeIn'></a>
+                                <a class = 'bulletin-item' id = 'bulletin-item-event' data-wow-delay = "0.2s"><img src = 'img/first_20.jpg' class = 'masonry-bulletin-item wow fadeIn'></a>
+                                <a class = 'bulletin-item' id = 'bulletin-item-blackout' data-wow-delay = "0.3s"><img src = 'img/first_22.jpg' class = 'masonry-bulletin-item wow fadeIn'></a>
+                            </div>
+                        </div>
+                    </div>             
                 </div>
             </div> <!-- #main -->
         </div> <!-- #main-container -->
@@ -105,7 +153,9 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
+        <script src="js/vendor/masonry.pkgd.min.js"></script>
+        <script src="js/vendor/wow.min.js"></script>
+        <script src="js/vendor/skrollr.min.js"></script>
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
