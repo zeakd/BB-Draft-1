@@ -1,3 +1,6 @@
+new WOW().init();
+skrollr.init();
+
 var $bulletin = $('#bulletin');
 // initialize
 $bulletin.masonry({
@@ -6,5 +9,3 @@ $bulletin.masonry({
     "percentPosition": true
 });
 
-new WOW().init();
-skrollr.init();
