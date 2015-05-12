@@ -13,6 +13,7 @@
         
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/unsemantic-grid-responsive-tablet.css">
+        <link rel="stylesheet" href="css/swiper.css">
         <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/font.css">
         <link rel="stylesheet" href="css/main.css">
@@ -77,69 +78,126 @@
             </header>
         </div>
 -->
-<!--
-        <header id = 'desktop-header' class = 'header'>
-            <div class = 'logo'>
-                <a href = "/beanbrothers"></a>
-            </div>
+        <header id = 'desktop-header' class = 'header hide-on-mobile'>
             <nav class = 'wrapper'>
-                <ul id = 'left-nav'>
-                    <li class = 'major-menu menu'><a href = "/beanbrothers/cafe">OUR CAFE</a></li>
-                    <li class = 'major-menu menu'><a>SUBSCRIBE</a></li>
-                    <li class = 'major-menu menu'><a>GOODS</a></li>
-                    <li class = 'major-menu menu'><a href = "/beanbrothers/guide">GUIDE</a></li>
-                    <li class = 'major-menu menu'><a>EVENT</a></li>                   
-                </ul>
+                <a href = "/beanbrothers" class = 'logo'>
+<!--                    <img src = "img/BEANBROTHERS_white.png">-->
+                </a>
                 <ul id = 'right-nav'>
-                    <li class = 'minor-menu menu'><a>LOGIN</a></li>
-                    <li class = 'minor-menu menu'><a>CART</a></li>
+                    <li><a class = 'cart' href = "#">장바구니</a></li>
+                    <li><a class = 'login' href = "#">로그인</a></li>
+                    <li><a class = 'event' href = "#">이벤트</a></li>
+                    <li><a class = 'business' href = "#">비즈니스</a></li>
+                    <li><a class = 'hire' href = "#">채용</a></li>
                 </ul>
+                <ul id = 'left-nav'>
+                    <li><a class = 'cafe' href = "#">카페</a></li>
+                    <li><a class = 'goods'href = "#">상품</a></li>
+                    <li><a class = 'subscribe' href = "#">커피구독</a></li>
+                    <li><a class = 'guide' href = "#">가이드</a></li>
+                    <li><a class = 'class' href = "#">클래스</a></li>                   
+                </ul>
+
+
             </nav>
         </header>
--->
 
-        <div class="main-container" id = 'skrollr-body'>
+        <div class="main-container">
             <div class="main wrapper clearfix">
-                <div class = 'main-grid-bg'>
+<!--
+                <div class = 'main-grid-bg' data-0 = "top : 0px;opacity:1;" data-700 = "top : -200px;opacity:0.7;">
                     
                 </div>
                 <div class = 'main-grid grid-100'>
-                    <img class = 'wow fadeIn' src = 'img/first_02_txt_s.png' data-0 = "top : 0px;" data-200 = "top : -400px;">
+                    <img class = 'wow fadeIn' src = 'img/first_02_txt_s.png'>
                 </div>
-                <div class = 'support-grid grid-container'>
-                    <div class = 'support-space' id = 'item0'></div>
-                    <div class = 'grid-100 grid-parent' id = 'item1'>
-                        <div class = 'grid-80 push-10 grid-parent'>
-                            <div class = 'grid-33'>
-                                <div id = 'item1-1' class = 'wow fadeInUp' data-wow-duration = "0.5s" data-wow-delay = "0.1s">
+                <div class = 'support-grid grid-parent grid-100'>
+                    <div class='main push-10 grid-80 grid-parent'>
+                        <div class = 'support-space' id = 'item0'></div>
+                        <div class = 'grid-100 grid-parent' id = 'item1'>
+                            <ul class = 'grid-80 push-10 grid-parent'>
+                                <li class = 'grid-33'>
+                                    <div id = 'item1-1' class = 'wow fadeInUp' data-wow-duration = "0.5s" data-wow-delay = "0.1s">
 
-                                </div>
-                            </div>
-                            <div class = 'grid-33'>
-                                <div id = 'item1-2' class = 'wow fadeInUp' data-wow-duration = "0.5s">
+                                    </div>
+                                </li>
+                                <li class = 'grid-33'>
+                                    <div id = 'item1-2' class = 'wow fadeInUp' data-wow-duration = "0.5s">
 
-                                </div>
-                            </div>
-                            <div class = 'grid-33'>
-                                <div id = 'item1-3' class = 'wow fadeInUp' data-wow-duration = "0.5s" data-wow-delay = "0.2s">
+                                    </div>
+                                </li>
+                                <li class = 'grid-33'>
+                                    <div id = 'item1-3' class = 'wow fadeInUp' data-wow-duration = "0.5s" data-wow-delay = "0.2s">
 
-                                </div>
-                            </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class = 'grid-100' id = 'item2'>
-                        <img src = "img/beanbrothers_100.png">
-                    </div>
-                    <div class = 'grid-100 grid-parent' id = 'item3'>
-                        <div class = "grid-80 push-10 grid-parent">
+                        <div class = 'grid-100' id = 'item2'>
+                            <img src = "img/beanbrothers_80_wide.png">
+                        </div>
+                        <div class = 'grid-100 grid-parent' id = 'item3'>
+                            <div class = "grid-80 push-10 grid-parent">
+                                <div id = 'bulletin'>
+                                    <div class="grid-sizer"></div>
+                                    <a class = 'bulletin-item grid-45 tablet-grid-65' id = 'bulletin-item-subscribe' data-wow-delay = "0.1s"><img src = 'img/first_18.jpg' class = 'masonry-bulletin-item wow fadeIn'></a>
+                                    <a class = 'bulletin-item grid-30 tablet-grid-65' id = 'bulletin-item-event' data-wow-delay = "0.2s"><img src = 'img/first_20.jpg' class = 'masonry-bulletin-item wow fadeIn'></a>
+                                    <a class = 'bulletin-item grid-25 tablet-grid-35 hide-on-mobile' id = 'bulletin-item-blackout' data-wow-delay = "0.3s"><img src = 'img/first_22.jpg' class = 'masonry-bulletin-item wow fadeIn'></a>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>         
+                </div>
+-->
+                <div class = 'main-grid-bg swiper-container' data-0 = "top : 0px;opacity:1;" data-700 = "top : -200px;opacity:0.5;">
+                    <ul class = 'swiper-wrapper'>
+                        <li class = "bg1 swiper-slide">
+                            <img class = 'wow fadeIn' src = 'img/first_02_txt_s.png'>
+                        </li>
+                        <li class = "bg2 swiper-slide">
+                            
+                        </li>
+                        <li class = "bg3 swiper-slide">
+                        
+                        </li>
+                    </ul>
+                </div>
+                <div class = 'support-grid grid-parent grid-100'>
+                    <div class='main push-10 grid-80 tablet-push-5 tablet-grid-90 grid-parent'>
+                        <div class = 'grid-100 grid-parent' id = 'item1'>
+                            <ul class = 'grid-100 grid-parent'>
+                                <li class = 'grid-33 tablet-grid-35 item-wrapper'>
+                                    <div id = 'item1-1' class = 'wow fadeInUp' data-wow-duration = "0.5s" data-wow-delay = "0.1s">
+
+                                    </div>
+                                </li>
+                                <li class = 'grid-33 tablet-grid-40 item-wrapper'>
+                                    <div id = 'item1-2' class = 'wow fadeInUp' data-wow-duration = "0.5s">
+                                    </div>
+                                </li>
+                                <li class = 'grid-33 tablet-grid-25 item-wrapper'>
+                                    <div id = 'item1-3' class = 'wow fadeInUp' data-wow-duration = "0.5s" data-wow-delay = "0.2s">
+
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class = 'grid-100' id = 'item2'>
+                            <img class = 'hole' src = "img/first_15_2.png">
+                            <div class = 'bg'  data-0 = "top : -200px;" data-1400 = "top : -500px;"></div>
+
+
+                        </div>
+                        <div class = 'grid-100 grid-parent' id = 'item3'>
                             <div id = 'bulletin'>
                                 <div class="grid-sizer"></div>
+                                <div class="gutter-sizer"></div>
                                 <a class = 'bulletin-item grid-45 tablet-grid-65' id = 'bulletin-item-subscribe' data-wow-delay = "0.1s"><img src = 'img/first_18.jpg' class = 'masonry-bulletin-item wow fadeIn'></a>
                                 <a class = 'bulletin-item grid-30 tablet-grid-65' id = 'bulletin-item-event' data-wow-delay = "0.2s"><img src = 'img/first_20.jpg' class = 'masonry-bulletin-item wow fadeIn'></a>
                                 <a class = 'bulletin-item grid-25 tablet-grid-35 hide-on-mobile' id = 'bulletin-item-blackout' data-wow-delay = "0.3s"><img src = 'img/first_22.jpg' class = 'masonry-bulletin-item wow fadeIn'></a>
                             </div>
                         </div>
-                    </div>             
+                    </div>         
                 </div>
             </div> <!-- #main -->
         </div> <!-- #main-container -->
@@ -154,6 +212,8 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <script src="js/vendor/unslider.js"></script>
+        <script src="js/vendor/swiper.jquery.min.js"></script>
         <script src="js/vendor/masonry.pkgd.min.js"></script>
         <script src="js/vendor/wow.min.js"></script>
         <script src="js/vendor/skrollr.min.js"></script>
