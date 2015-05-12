@@ -1,3 +1,11 @@
+$(document).ready(function(){
+//    var mySwiper = new Swiper ('.swiper-container', {
+//      // Optional parameters
+//      direction: 'vertical',
+//      loop: true
+//    })   
+});
+
 $(window).load(function(){
     var $bulletin = $('#bulletin');
 
@@ -6,7 +14,22 @@ $(window).load(function(){
         "columnWidth": ".grid-sizer",
         "itemSelector": ".bulletin-item",
         "percentPosition": true
+
     });
+    $(".main-grid-bg").unslider({fluid : 'true'});
 });
 new WOW().init();
-skrollr.init({forceHeight: false});
+if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+    skrollr.init({
+        forceHeight : false,
+        smoothScrollingDuration : 50
+    });
+}
+
+$(window).scroll(function(){
+    var $window = $(window);
+    var $desktopHeader = $("#desktop-header");
+    $window.scrollTop() > 460 ? $desktopHeader.addClass("fade") 
+    : $desktopHeader.removeClass("fade");
+});
+

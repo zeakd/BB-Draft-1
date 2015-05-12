@@ -92,8 +92,16 @@ body {
     MOBILE: Menu
    ============== */
 
-/*
+#desktop-header {
+    font: 12px/26px NanumBarunGothic;
+    background-color: black;
+    position: fixed;
+    z-index: 100;
+    width : 100%;
+}
+
 nav ul {
+    width : 100%;
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -109,7 +117,6 @@ nav a {
     font-weight: bold;
 
     color: white;
-    background: #e44d26;
 }
 
 nav a:hover,
@@ -120,7 +127,6 @@ nav a:visited {
 nav a:hover {
     text-decoration: underline;
 }
-*/
 
 /* ==============
     MOBILE: Main
@@ -131,7 +137,8 @@ nav a:hover {
 }
 .main-grid-bg, 
 .main-grid{
-    min-height : 500px;
+    z-index: 0;
+    height : 250px;
     width : 100%;
 }
 .main-grid {
@@ -144,45 +151,73 @@ nav a:hover {
     background-repeat: no-repeat;   
 */
 }
-.main-grid > img{
+.main-grid-bg {
+    position: fixed;
+}
+.main-grid-bg li > img{
     position: absolute;
     max-width : 50%;
     margin: auto;
     top: 0%; right : 0; bottom: 0; left :0;
 }
-.main-grid-bg {
-    z-index: -10;
-    position: fixed;
-    background-image: url(../img/first_02.jpg);
+.main-grid-bg ul {
+    display: block;
+    width : 100%;
+    height : 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.main-grid-bg li {
+    position: relative;
+    float: left;
+    display: block;   
+    width:100%;
+    height:100%;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;   
+    background-repeat: no-repeat;    
 }
-
-
-
+.main-grid-bg .bg1{
+    background-image: url(../img/first_02.jpg);
+}
+.main-grid-bg .bg2{
+    background-image: url(../img/main_roll_02-2.jpg);
+}
+.main-grid-bg .bg3{
+    background-image: url(../img/main_roll_03-2.jpg);
+}
+.bulletin-item > img{
+    width :100%;
+}
 .support-grid {
+    top : 250px; 
+    z-index: 1;  
+    background-color: white;
     position: relative;
     max-width : none;
     padding : 0;
     margin : 0;
 }
-[id^='item']{
+#item0{
+    padding-top: 100px;
+    background-color: white;
 }
-div[id^= 'item1-']{
-    margin : 20px 0;
+[id^= 'item1-']{
+    margin : 0;
+    padding: 0;
     height : 200px;
     background-color: darkorange;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-#item0{
-    padding-top: 100px;
-    background-color: white;
-}
 #item1{
     background-color: white;
+    padding-bottom: 30px;
+}
+.item-wrapper {
+    padding: 0;   
 }
 #item1-1{
     background-image: url(../img/first_05.jpg);
@@ -194,50 +229,43 @@ div[id^= 'item1-']{
     background-image: url(../img/first_09.jpg);
 }
 #item2 {
+    position: relative;
     overflow: hidden;
     padding: 0;
+    margin : 0;
 }
-#item2 img{
+#item2 .bg{
+    z-index: 9;
+    position: absolute;
+    background: -webkit-linear-gradient(#000, #fff); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#000, #fff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#000, #fff); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#000 10%, #fff 90%); /* Standard syntax */
+/*
+    background-image: url(../img/first_02.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;  
+*/
+
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width : 100%;   
+    height : 900px;
+}
+#item2 .hole{
+    position: relative;
     width : 100%;
+    z-index: 10;
 }
 #item3 {
+    padding-top : 40px;
     background-color: white;   
 }
-#bulletin {
-    margin-top : 20px;
-    width : 100%;
-}
-.grid-sizer {
-    width : 5%;   
-}
 .bulletin-item {
-    display: block;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding : 10px;
-/*
-    margin-right : 2.5%;
-    margin-bottom: 2.5%;
-*/
-/*
-    margin-right : 20px;
-    margin-bottom: 20px;
-*/
-}
-/*
-#bulletin-item-subscribe {
-    width : 65%;
-}
-#bulletin-item-event {
-    width : 65%;
-}
-#bulletin-item-blackout {
-    width : 35%;
-}
-*/
-.bulletin-item > img{
-    width :100%;
+    padding : 0;   
 }
 /* ===============
     ALL: IE Fixes
@@ -269,18 +297,14 @@ div[id^= 'item1-']{
    Media Queries
    ========================================================================== */
 
-@media only screen and (max-width : 767px){
+@media only screen and (min-width: 480px){
 
 /* ====================
     INTERMEDIATE: Menu
    ==================== */
-
-/*
+    
     nav a {
         float: left;
-        width: 27%;
-        margin: 0 1.7%;
-        padding: 25px 2%;
         margin-bottom: 0;
     }
 
@@ -291,8 +315,118 @@ div[id^= 'item1-']{
     nav li:last-child a {
         margin-right: 0;
     }
-*/
+    #desktop-header {
+        -webkit-transition: all 0.5s ease, opacity 0.3s ease;
+           -moz-transition: all 0.5s ease, opacity 0.3s ease;
+             -o-transition: all 0.5s ease, opacity 0.3s ease;
+                transition: all 0.5s ease, opacity 0.3s ease;
+        height : 40px;
+    }
+    #desktop-header > nav {
+        position: absolute;
+        width : 90%;   
+        margin: auto;
+        left:0; right : 0;
+    }
+    
+    #left-nav a,
+    #right-nav a{
+        display: block;
+        width : 60px;   
+        padding: 8px 0;
+    }
+    #left-nav a{
+        float : left;
+    }
+    #right-nav a{
+        float : right;
+    }   
+    #desktop-header .logo {
+        -webkit-transition: all 0.5s ease, opacity 0.3s ease;
+           -moz-transition: all 0.5s ease, opacity 0.3s ease;
+             -o-transition: all 0.5s ease, opacity 0.3s ease;
+                transition: all 0.5s ease, opacity 0.3s ease;
+        background-image: url(../img/BEANBROTHERS_white.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width : 168.75px;
+        position: absolute;
+        margin: 7.5px auto;
+        top:0; right :0; bottom: 0; left :0;
+        
+    }
+    #desktop-header.fade {
+        background-color: white;
+/*        border-bottom : 1px solid gray;*/
+        box-shadow: 0px 2px 4px #888888
+    }
+    #desktop-header.fade #left-nav a{
+        float: right;
+    }
+    #desktop-header.fade a {
+        color : black;   
+    }
+    #desktop-header.fade .logo{
+        right:auto;
+        background-image: url(../img/BEANBROTHERS.png);
+    }
+    #desktop-header.fade .cafe,
+    #desktop-header.fade .subscribe,
+    #desktop-header.fade .guide,
+    #desktop-header.fade .class,
+    #desktop-header.fade .event,
+    #desktop-header.fade .business,
+    #desktop-header.fade .hire{
+        display : none;   
+    }
+    
+/* ====================
+    INTERMEDIATE: Main
+   ==================== */
+    .main-grid-bg, 
+    .main-grid{
+        height : 300px;
+    }
+    .support-grid {
+        top : 300px;   
+    }
 
+    #item0{
+        padding-top: 40px;
+    }
+    .item-wrapper {
+        padding: 0 10px;   
+    }
+    #item1 {
+        padding-top : 120px;
+    }
+    [id^= 'item1-']{
+        height : 200px;
+    }
+    #item1 li:first-child {
+        padding-left: 0;
+    }
+
+    #item1 li:last-child {
+        padding-right: 0;
+    }
+ /*
+    #item0{
+        padding-top: 80px;
+    }
+*/
+/*
+    #bulletin-item-subscribe {
+        width : 65%;
+    }
+    #bulletin-item-event {
+        width : 65%;
+    }
+    #bulletin-item-blackout {
+        width : 35%;
+    }
+*/
+    
 /* ========================
     INTERMEDIATE: IE Fixes
    ======================== */
@@ -307,17 +441,11 @@ div[id^= 'item1-']{
     
     
     
-    .main-grid-bg, 
-    .main-grid{
-        min-height : 300px;
-    }
-    #item0{
-        padding-top: 40px;
-    }
-    
+
 }
 
-@media only screen and (min-width: 768px) and (max-width : 1024px) {
+@media only screen and (min-width: 768px) {
+
 
 /* ====================
     WIDE: CSS3 Effects
@@ -333,22 +461,59 @@ div[id^= 'item1-']{
 /* ============
     WIDE: Menu
    ============ */
-
-    .title {
-        float: left;
+    #desktop-header .wrapper {
+        width : 80%;   
     }
 
-    nav {
-        float: right;
-        width: 38%;
-    }
-
+    
 /* ============
     WIDE: Main
    ============ */
-    #item0{
-        padding-top: 80px;
+    .main-container .margin-left,
+    .main-container .margin-right{
+        height : 100%;
     }
+    .main-grid-bg, 
+    .main-grid{
+        height : 500px;
+    }
+    .support-grid {
+        top : 500px;
+    }
+    [id^='item']{
+    }
+
+    
+    #item2 .bg{
+        left:-12.5%;
+        right:-12.5%;
+        width : 125%;   
+        height : 900px;
+    }
+    
+    #bulletin {
+        margin-top : 20px;
+        width : 100%;
+    }
+    .grid-sizer {
+        width : 5%;   
+    }
+    .bulletin-item {
+        display: block;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding : 10px;
+    /*
+        margin-right : 2.5%;
+        margin-bottom: 2.5%;
+    */
+    /*
+        margin-right : 20px;
+        margin-bottom: 20px;
+    */
+    }
+
 }
 
 @media only screen and (min-width: 1140px) {
