@@ -59,7 +59,7 @@ textarea {
 body {
     font: 16px/26px 'Apple SD Gothic Neo', NanumBarunGothic, '나눔고딕', 'NG', 'Malgun Gothic', dotum, sans-serif;
     background-color: #BCB5AD;
-
+    display: none;
 }
 
 .wrapper {
