@@ -4,11 +4,18 @@ $(document).ready(function(){
 //      direction: 'vertical',
 //      loop: true
 //    })   
+    $(window).scroll(function(){
+        var $window = $(window);
+        var $desktopHeader = $("#desktop-header");
+        $window.scrollTop() > 460 ? $desktopHeader.addClass("fade") 
+        : $desktopHeader.removeClass("fade");
+});
+
 });
 
 $(window).load(function(){
     var $bulletin = $('#bulletin');
-
+    
     // initialize
     $bulletin.masonry({
         "columnWidth": ".grid-sizer",
@@ -17,19 +24,14 @@ $(window).load(function(){
 
     });
     $(".main-grid-bg").unslider({fluid : 'true'});
+    new WOW().init();
+    if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+        skrollr.init({
+            forceHeight : false,
+            smoothScrollingDuration : 50
+        });
+    }
 });
-new WOW().init();
-if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
-    skrollr.init({
-        forceHeight : false,
-        smoothScrollingDuration : 50
-    });
-}
 
-$(window).scroll(function(){
-    var $window = $(window);
-    var $desktopHeader = $("#desktop-header");
-    $window.scrollTop() > 460 ? $desktopHeader.addClass("fade") 
-    : $desktopHeader.removeClass("fade");
-});
+
 
