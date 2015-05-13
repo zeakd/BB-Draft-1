@@ -179,15 +179,21 @@ nav a:hover {
     background-position: center;
     background-repeat: no-repeat;    
 }
+/*
 .main-grid-bg .bg1{
     background-image: url(../img/first_02.jpg);
 }
+*/
+/*
 .main-grid-bg .bg2{
     background-image: url(../img/main_roll_02-2.jpg);
 }
+*/
+/*
 .main-grid-bg .bg3{
     background-image: url(../img/main_roll_03-2.jpg);
 }
+*/
 .bulletin-item > img{
     width :100%;
 }
@@ -220,6 +226,7 @@ nav a:hover {
 .item-wrapper {
     padding: 0;   
 }
+/*
 #item1-1{
     background-image: url(../img/first_05.jpg);
 }
@@ -229,6 +236,7 @@ nav a:hover {
 #item1-3{
     background-image: url(../img/first_09.jpg);
 }
+*/
 #item2 {
     position: relative;
     overflow: hidden;
