@@ -14,6 +14,7 @@ $(document).ready(function(){
 });
 
 $(window).load(function(){
+    var $body = $("body").fadeIn(200);
     var $bulletin = $('#bulletin');
     
     // initialize
