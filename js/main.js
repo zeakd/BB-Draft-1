@@ -9,7 +9,7 @@ $(document).ready(function(){
         var $desktopHeader = $("#desktop-header");
         $window.scrollTop() > 460 ? $desktopHeader.addClass("fade") 
         : $desktopHeader.removeClass("fade");
-});
+    });
 
 });
 $(window).load(function(){
@@ -32,6 +32,3 @@ $(window).load(function(){
         });
     }
 });
-
-
-
