@@ -52,6 +52,7 @@ textarea {
 }
 ul {
     list-style-type: none;
+	padding : 0;
 }
 
 /* ===== Initializr Styles ==================================================
@@ -61,7 +62,7 @@ ul {
 body {
     font: 16px/26px 'Apple SD Gothic Neo', NanumBarunGothic, '나눔고딕', 'NG', 'Malgun Gothic', dotum, sans-serif;
     background-color: #BCB5AD;
-    display: none;
+/*    display: none;*/
 }
 
 .wrapper {
@@ -139,7 +140,7 @@ nav a:hover {
     position : relative;
 }
 .main-grid-bg, 
-.main-grid{
+.main-grid-area{
     z-index: 0;
     height : 250px;
     width : 100%;
@@ -196,11 +197,27 @@ nav a:hover {
     background-image: url(../img/main_roll_03-2.jpg);
 }
 */
+.bulletin-item{
+    display: inline-block;
+/*
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+*/
+    padding : 10px;
+/*	margin : 10px;*/
+	overflow : hidden;
+}
 .bulletin-item > img{
     width :100%;
 }
+.bulletin-item .text{
+    position : absolute;
+	top : 0;
+	left : 0;
+
+}
 .support-grid {
-    top : 250px; 
     z-index: 1;  
     background-color: white;
     position: relative;
@@ -222,12 +239,11 @@ nav a:hover {
     background-repeat: no-repeat;
 }
 #item1{
+	position : relative;
     background-color: white;
     padding-bottom: 30px;
 }
-.item-wrapper {
-    padding: 0;   
-}
+
 /*
 #item1-1{
     background-image: url(../img/first_05.jpg);
@@ -243,7 +259,7 @@ nav a:hover {
     position: relative;
     overflow: hidden;
     padding: 0;
-    margin : 0;
+    margin : 0 auto;
 }
 #item2 .bg{
     z-index: 9;
@@ -272,12 +288,136 @@ nav a:hover {
     z-index: 10;
 }
 #item3 {
+	position : relative;
     padding-top : 40px;
     background-color: white;   
 }
-.bulletin-item {
-    padding : 0;   
+
+#insta {
+	font: 12px/26px BebasNeue;
+	padding-top: 60px;
+	position : relative;
+	min-height : 300px;
 }
+#insta h1, 
+#insta h2,
+#insta h3{
+	margin-right: 0.5em;
+	display: inline-block;
+	font-weight: bold;
+}
+#insta .header {
+	width : 100%;
+	height : 30px;
+}
+.footer-area{
+	position : relative;
+}
+
+.footer {
+	position : fixed;
+	bottom : -500px;
+	background-color: #B3AFA6;
+}
+.footer-area,
+.footer {
+	height : 550px;
+	width : 100%;
+}
+
+.footer-link a{
+	display: inline-block;
+}
+.footer-link li img{
+	width : 100%;
+
+}
+.footer-link .about,
+.footer-link .privacy,
+.footer-link .qna,
+.footer-link .blog,
+.footer-link .facebook,
+.footer-link .instagram{
+	background-repeat: no-repeat;
+	background-size: contain;
+	-webkit-transition: all 0.5s ease;
+	   -moz-transition: all 0.5s ease;
+	     -o-transition: all 0.5s ease;
+	        transition: all 0.5s ease;
+}
+.footer-link .about {
+	background-image: url(../img/TEST_01_main_33_1.png);
+
+}
+.footer-link .about:hover {
+	background-image: url(../img/TEST_01_main_33.png);
+}
+
+.footer-link .privacy {
+	background-image: url(../img/TEST_01_main_35_1.png);
+}
+.footer-link .privacy:hover {
+	background-image: url(../img/TEST_01_main_35.png);
+}
+.footer-link .qna {
+	background-image: url(../img/TEST_01_main_37_1.png);
+}
+.footer-link .qna:hover {
+	background-image: url(../img/TEST_01_main_37.png);
+}
+.footer-link .blog {
+	background-image: url(../img/TEST_01_main_39_1.png);
+}
+.footer-link .blog:hover {
+	background-image: url(../img/TEST_01_main_39.png);
+}
+.footer-link .facebook{
+	background-image: url(../img/TEST_01_main_41_1.png);
+}
+.footer-link .facebook:hover{
+	background-image: url(../img/TEST_01_main_41.png);
+}
+.footer-link .instagram {
+	background-image: url(../img/TEST_01_main_43_1.png);
+}
+.footer-link .instagram:hover {
+	background-image: url(../img/TEST_01_main_43.png);
+}
+.footer > .wrapper{
+	padding-top : 50px;
+	width : 60%;
+	margin : auto;
+}
+.footer-info {
+	padding-top : 50px;
+	color : white;
+	text-align: center;
+}
+.footer-info h1{
+	font-size: 1.3em;
+}
+.footer-info p{
+	font-size: 1.0em;
+	line-height: 1.3em;
+	margin: 0.3em auto ;
+	padding: 0;
+}
+.footer-info h2{
+	padding: 0;
+	margin: 0.3em auto;
+	font-size: 1.0em;
+}
+
+.footer-info .logo{
+	width : 180px;
+}
+.footer-info .line{
+	margin: 1.3em 0;
+	border: 2px solid white;
+}
+
+
+
 /* ===============
     ALL: IE Fixes
    =============== */
@@ -335,7 +475,6 @@ nav a:hover {
     }
     #desktop-header > nav {
         position: absolute;
-        width : 90%;   
         margin: auto;
         left:0; right : 0;
     }
@@ -395,24 +534,20 @@ nav a:hover {
     INTERMEDIATE: Main
    ==================== */
     .main-grid-bg, 
-    .main-grid{
+    .main-grid-area{
         height : 300px;
-    }
-    .support-grid {
-        top : 300px;   
     }
 
     #item0{
         padding-top: 40px;
-    }
-    .item-wrapper {
-        padding: 0 10px;   
     }
     #item1 {
         padding-top : 120px;
     }
     [id^= 'item1-']{
         height : 200px;
+	}
+/*
     }
     #item1 li:first-child {
         padding-left: 0;
@@ -421,6 +556,7 @@ nav a:hover {
     #item1 li:last-child {
         padding-right: 0;
     }
+*/
  /*
     #item0{
         padding-top: 80px;
@@ -437,7 +573,12 @@ nav a:hover {
         width : 35%;
     }
 */
-    
+
+	.footer > .wrapper{
+		padding-top : 50px;
+		width : 80%;
+		margin : auto;
+	}
 /* ========================
     INTERMEDIATE: IE Fixes
    ======================== */
@@ -472,10 +613,6 @@ nav a:hover {
 /* ============
     WIDE: Menu
    ============ */
-    #desktop-header .wrapper {
-        width : 90%;   
-    }
-
     
 /* ============
     WIDE: Main
@@ -485,12 +622,10 @@ nav a:hover {
         height : 100%;
     }
     .main-grid-bg, 
-    .main-grid{
+    .main-grid-area{
         height : 500px;
     }
-    .support-grid {
-        top : 500px;
-    }
+
     [id^='item']{
     }
 
@@ -503,28 +638,16 @@ nav a:hover {
     }
     
     #bulletin {
-        margin-top : 20px;
-        width : 100%;
+        margin-top : 20px;;
     }
     .grid-sizer {
         width : 5%;   
     }
-    .bulletin-item {
-        display: block;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        padding : 10px;
-    /*
-        margin-right : 2.5%;
-        margin-bottom: 2.5%;
-    */
-    /*
-        margin-right : 20px;
-        margin-bottom: 20px;
-    */
-    }
-
+	.footer > .wrapper{
+		width : 60%;
+		max-width: 780px;
+		margin : auto;
+	}
 }
 
 @media only screen and (min-width: 1140px) {
